@@ -22,7 +22,7 @@ class TodoListModel extends ChangeNotifier {
   }
 
   Future<void> saveTasksToSharedPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences?.getInstance();
     final json = jsonEncode(tasks);
     prefs.setString('tasks', json);
   }
